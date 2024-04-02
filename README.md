@@ -2,5 +2,5 @@
 with JSON-PlaceHolder as back-end server API Using Material-UI as front-end and with Redux-Toolkit
 
 # Prerequisite
-install nodeJs
-install react
+Node.Js
+
