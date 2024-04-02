@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import { fetchPosts } from '../actions/postActions.js';
 
 const headerSlice = createSlice({
     name: 'header',

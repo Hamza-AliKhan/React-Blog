@@ -20,12 +20,6 @@ const homePageSlice = createSlice({
   name: "homePage",
   initialState,
   reducers: {
-    // setSelectedPostId(state, action){
-    //       state.selectedPostId = action.payload;
-    // },
-    // setSelectedAlbumId(state, action){
-    //   state.selectedAlbumId = action.payload;
-    // },
     setOpenError(state, action){
       state.openError = action.payload;
     },

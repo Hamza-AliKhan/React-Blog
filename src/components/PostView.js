@@ -23,8 +23,10 @@ import {fetchPostView} from "../actions/postActions.js";
 
 const PostView = ({ postId, onBack }) => {
   const post = useSelector((state) => state.app.postList.postView.currentPost);
+  //when not using fake API JSON Placeholder comments is directly used instead of the updated comments
   //const comments = useSelector(state => state.app.postView.comments);
-  //let id = useSelector(state => state.app.postView.commentData.id);
+  //updated comments is used for local manupulation and display only
+  //because doesn't support POST for comments 
   const [updatedComments, setUpdatedComments] = useState([]);
   const loading = useSelector((state) => state.app.postList.postView.loading);
   const openAlert = useSelector((state) => state.app.postList.postView.openAlert);
@@ -66,22 +68,6 @@ const PostView = ({ postId, onBack }) => {
     });
   };
 
-  // const handleSubmit = async (e) => {
-  //   setCommentData({postId:postId ,id :(commentData.id + 1),name:commentData.name,email:commentData.email,body:commentData.body});
-  //   e.preventDefault();
-  //   try {
-  //     const response = postComments(postId,commentData);
-  //     console.log('Posted comments:', response);
-  //     setUpdatedComments(comments.unshift(commentData))
-  //     console.log('Posted comment in comment Data:', commentData);
-  //     console.log('Posted comment in original comments:', comments);
-  //     setOpen(true);
-  //   } catch (error) {
-  //     console.error('Error posting comment:', error);
-  //   }
-
-  // };
-
   const handleSubmit = async (e) => {
     setCommentData({
       ...commentData,
@@ -95,6 +81,7 @@ const PostView = ({ postId, onBack }) => {
     try {
       const response = await postComments(postId, commentData);
       console.log("Posted comments on Server:", response);
+      //when not using fake API JSON Placeholder because doesn't support POST for comments 
       //setComments(prevState => [commentData, ...prevState]);
       setUpdatedComments((prevState) => [commentData, ...prevState]);
       //console.log('Posted comment in commentData:', commentData);

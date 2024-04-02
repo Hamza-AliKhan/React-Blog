@@ -31,11 +31,7 @@ export default function Header({ darkMode, onDarkModeToggle }) {
   const transition = useSelector(state => state.app.header.transition);
   const loading = useSelector(state => state.app.header.loading);
   const dispatch = useDispatch();
-  // const iOS =
-  //   typeof navigator !== "undefined" &&
-  //   /iPad|iPhone|iPod/.test(navigator.userAgent);
-  //<Drawer disableBackdropTransition={!iOS} disableDiscovery={iOS} />;
-
+  
   function handleBackgroundChange (value) {
     dispatch(setLoading(true));
     dispatch(setTransition(false));
