@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Blog App",
+  "name": "React Blog App with JSON-PlaceHolder",
   "icons": [
     {
       "src": "favicon.ico",
