@@ -5,7 +5,7 @@ const ResponseInterceptor = axios.create({
   });
   
   export const getPosts = () => {
-    return(ResponseInterceptor.get(`/posts?_limit=50`));
+    return(ResponseInterceptor.get(`/posts?_limit=100`));
   };
 
   export const viewPosts = (postId) => {
@@ -28,7 +28,7 @@ const ResponseInterceptor = axios.create({
   };
 
   export const getAlbums = () =>{
-    return (ResponseInterceptor.get(`/albums?_limit=50`));
+    return (ResponseInterceptor.get(`/albums?_limit=100`));
   };
 
   export const viewAlbums = (postId) => {
@@ -44,7 +44,7 @@ const ResponseInterceptor = axios.create({
   };
 
   export const getUsers = () =>{
-    return (ResponseInterceptor.get(`/users`));
+    return (ResponseInterceptor.get(`/users?_limit=100`));
   };
   
   export default ResponseInterceptor;
