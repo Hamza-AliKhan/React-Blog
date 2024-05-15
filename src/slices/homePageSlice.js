@@ -41,7 +41,7 @@ const homePageSlice = createSlice({
         })
         .addCase(fetchPosts.fulfilled, (state, action) => {
           state.loading = false;
-          state.homePosts = action.payload.slice(0,2);
+          state.homePosts = action.payload.slice(1,3);
           state.openError = false;
         })
         .addCase(fetchPosts.rejected, (state, action) => {
@@ -55,7 +55,7 @@ const homePageSlice = createSlice({
       })
       .addCase(fetchAlbumsAsync.fulfilled, (state, action) => {
         //state.loading = false;
-        state.homeAlbumList = action.payload.slice(0,2);
+        state.homeAlbumList = action.payload.slice(1,3);
       })
       .addCase(fetchAlbumsAsync.rejected, (state, action) => {
         //state.loading = true;
@@ -67,7 +67,7 @@ const homePageSlice = createSlice({
         })
         .addCase(fetchComments.fulfilled, (state, action) => {
           //state.loading = false;
-          state.homeComments = action.payload.slice(0,10);
+          state.homeComments = action.payload.slice(0,30);
           state.openError = false;
         })
         .addCase(fetchComments.rejected, (state, action) => {

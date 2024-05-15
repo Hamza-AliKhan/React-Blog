@@ -16,7 +16,7 @@ export function Comments({ homePag, id, comments, TransitionEffect, commentTitle
             (comments.map(
               (comment) =>
                 (comment.postId === id 
-                  && (comment.id === id || comment.id === 6)
+                  && (comment.id === 6 || comment.id === 11)
                  )&& 
                 (
                   <ListItem key={comment.id}>

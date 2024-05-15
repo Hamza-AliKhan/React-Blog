@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const ResponseInterceptor = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com', // our API base URL
+    baseURL: 'http://localhost:5000/api', // our API base URL
   });
   
   export const getPosts = () => {
-    return(ResponseInterceptor.get(`/posts?_limit=100`));
+    return ResponseInterceptor.get(`/posts`) ;
   };
 
   export const viewPosts = (postId) => {
@@ -22,8 +22,9 @@ const ResponseInterceptor = axios.create({
 
   export const postComments = (postId,commentData) => {
     return (ResponseInterceptor.post(`/comments/?postId=${postId}`, {
-      postId: postId,
-      ...commentData
+      ...commentData,
+      postId: postId
+      
     }));
   };
 
@@ -32,19 +33,19 @@ const ResponseInterceptor = axios.create({
   };
 
   export const viewAlbums = (postId) => {
-    return (ResponseInterceptor.get(`/albums/${postId}`));
+    return (ResponseInterceptor.post(`/albums/${postId}`));
   };
 
   export const getPhotos = () =>{
-    return (ResponseInterceptor.get(`/photos?_limit=100`));
+    return (ResponseInterceptor.get(`/photos?_limit=120`));
   };
   
   export const viewPhotos = (postId) => {
-    return (ResponseInterceptor.get(`/photos?albumId=${postId}`));
+    return (ResponseInterceptor.get(`/photos/?albumId=${postId}`));
   };
 
   export const getUsers = () =>{
-    return (ResponseInterceptor.get(`/users?_limit=100`));
+    return (ResponseInterceptor.get(`/users`));
   };
   
   export default ResponseInterceptor;

@@ -72,7 +72,7 @@ const PostView = ({ postId, onBack }) => {
     setCommentData({
       ...commentData,
       postId: postId,
-      id: commentData.id + 1,
+      
       name: commentData.name,
       email: commentData.email,
       body: commentData.body,
