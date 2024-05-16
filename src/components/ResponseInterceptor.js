@@ -34,7 +34,7 @@ const ResponseInterceptor = axios.create({
   };
 
   export const viewAlbums = (postId) => {
-    return (ResponseInterceptor.post(`/albums/${postId}`));
+    return (ResponseInterceptor.get(`/albums/${postId}`));
   };
 
   export const getPhotos = () =>{
