@@ -17,9 +17,17 @@ const ResponseInterceptor = axios.create({
     return (ResponseInterceptor.get(`/comments?_limit=100`));
   };
   
-  export const viewComments = (postId) => {
-    return (ResponseInterceptor.get(`/comments/?postId=${postId}`));
-  };
+  export const viewComments = (postId,postListCheck) => {
+     if(postListCheck===true){
+      //console.log('postListCheck',postListCheck);
+       return (ResponseInterceptor.get(`/comments/?postId=${postId}?_orderby=DESC?_columnby=id`));
+
+     }
+    else{
+      //console.log('no postListCheck',postListCheck);
+      return (ResponseInterceptor.get(`/comments/?postId=${postId}`));
+  }
+};
 
   export const postComments = (postId,commentData) => {
     return (ResponseInterceptor.post(`/comments/?postId=${postId}`, {

@@ -96,7 +96,7 @@ export const PictureList = () => {
           </Grid>
         )}
       </Grid>
-
+        {!loading &&(
       <Grid
         container
         columnSpacing={{ md: 12 }}
@@ -114,7 +114,7 @@ export const PictureList = () => {
           mobileCheck={mobileCheck}
         />
       </Grid>
-
+      )}
       <Pagination
         count={Math.ceil(pictureList.length / itemsPerPage)}
         page={currentPage}

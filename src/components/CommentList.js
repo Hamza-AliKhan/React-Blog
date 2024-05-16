@@ -79,13 +79,15 @@ const CommentList = () => {
           </Stack>
         )}
       </Grid>
-
+       {comments &&( 
       <Stack spacing={4} sx={{ paddingBottom: "2rem" }}>
+        
         <Comments
           id={"comments"}
           comments={currentComments}
           TransitionEffect={TransitionEffect}
         />
+        
         <Pagination
           count={Math.ceil(comments.length / itemsPerPage)}
           page={currentPage}
@@ -94,6 +96,7 @@ const CommentList = () => {
           sx={{ paddingTop: "1rem" }}
         />
       </Stack>
+    )}
     </Grid>
   );
 };

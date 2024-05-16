@@ -18,7 +18,7 @@ export const fetchComments = createAsyncThunk(
   async (postId, { rejectWithValue }) => {
     try {
       // If postId is provided, call viewComments with postId, otherwise call getComments
-      const response = postId? await viewComments(postId) : await getComments();
+      const response = postId? await viewComments(postId,true) : await getComments();
       // Return the data from the response
       return response.data;
     } catch (error) {
