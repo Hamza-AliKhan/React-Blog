@@ -4,7 +4,7 @@ const ResponseInterceptor = axios.create({
     //baseURL: 'http://localhost:5000/api', // our API base URL for custom server
     baseURL: 'https://jsonplaceholder.typicode.com/', // our API base URL for JSONPlaceHolder
   });
-  
+
   export const getPosts = () => {
     return ResponseInterceptor.get(`/posts?_limit=50`) ;
   };
