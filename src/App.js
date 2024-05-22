@@ -71,12 +71,12 @@ function App() {
         <Header darkMode={darkMode} onDarkModeToggle={handleDarkModeToggle} />
         <Container >
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/posts" element={<PostList />} />
-            <Route path="/comments" element={<CommentList />} />
-            <Route path="/albums" element={<AlbumList />} />
-            <Route path="/photos" element={<PictureList />} />
-            <Route path="/users" element={<UserList />} />
+            <Route path="/" element={<HomePage darkMode={darkMode} />} />
+            <Route path="/posts" element={<PostList darkMode={darkMode}/>} />
+            <Route path="/comments" element={<CommentList darkMode={darkMode} />} />
+            <Route path="/albums" element={<AlbumList darkMode={darkMode}/>} />
+            <Route path="/photos" element={<PictureList darkMode={darkMode}/>} />
+            <Route path="/users" element={<UserList darkMode={darkMode}/>} />
           </Routes>
         </Container>
         <Footer />

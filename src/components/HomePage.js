@@ -22,7 +22,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setOpenError, setOpenImage, setImageLink, setMobileCheck  } from "../slices/homePageSlice.js";
 
 
-export default function HomePage() {
+export default function HomePage({darkMode}) {
   const posts = useSelector(state => state.app.homePage.homePosts);
   const homeComments = useSelector(state => state.app.homePage.homeComments);
   const albumList = useSelector(state => state.app.homePage.homeAlbumList);
@@ -77,7 +77,18 @@ export default function HomePage() {
             paddingTop: "2rem",
           }}
         >
-          Home Page
+          <Box sx={{
+              background:
+                (darkMode?("rgba(45,45,45,1)"):("rgba(142, 23, 33,0.95)")), 
+              color:
+                (darkMode ? ('#ffffff'):('#ffffff')), 
+              height:'100%',
+              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              borderRadius: '4px',
+              paddingX:'0.5rem'
+              }}>
+                HomePage
+              </Box>
         </Typography>
         {error && (
           <AlertSnackBar

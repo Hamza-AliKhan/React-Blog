@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Grid, Skeleton, Pagination, Typography } from "@mui/material";
+import { Box, Grid, Skeleton, Pagination, Typography } from "@mui/material";
 import { isMobile } from "react-device-detect";
 import { Photos } from "./Photos.js";
 import { TransitionEffect } from "./TransitionEffect.js";
@@ -14,7 +14,7 @@ import {
 } from "../slices/photoSlice.js";
 import AlertSnackBar from "./AlertSnackBar.js";
 
-export const PictureList = () => {
+export default function PictureList ({darkMode}) {
   const pictureList = useSelector(state => state.app.photos.photoList);
   const loading = useSelector(state => state.app.photos.loading);
   const mobileCheck = useSelector(state => state.app.photos.mobileCheck);
@@ -75,7 +75,18 @@ export const PictureList = () => {
               paddingTop: "2rem",
             }}
           >
-            Photos
+            <Box sx={{
+              background:
+                (darkMode?("rgba(45,45,45,1)"):("rgba(142, 23, 33,0.95)")), 
+              color:
+                (darkMode ? ('#ffffff'):('#ffffff')), 
+              height:'100%',
+              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              borderRadius: '4px',
+              paddingX:'0.5rem'
+              }}>
+                Photos
+              </Box>
           </Typography>
         </TransitionEffect>
         {error && (
@@ -126,4 +137,3 @@ export const PictureList = () => {
   );
 };
 
-export default PictureList;

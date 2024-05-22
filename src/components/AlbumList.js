@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  Box,
   Grid,
   Typography,
   Card,
@@ -15,7 +16,7 @@ import fetchAlbumsAsync from "../actions/albumActions.js";
 import { TransitionEffect } from "./TransitionEffect.js";
 import { setSelectedAlbumId, setOpenError } from "../slices/albumSlice.js";
 
-function AlbumList() {
+function AlbumList({darkMode}) {
   const albumlist = useSelector((state) => state.app.albums.albumList);
   const loading = useSelector((state) => state.app.albums.loading);
   const openError = useSelector((state) => state.app.albums.openError);
@@ -68,7 +69,18 @@ function AlbumList() {
               paddingTop: "2rem",
             }}
           >
-            Albums
+            <Box sx={{
+              background:
+                (darkMode?("rgba(45,45,45,1)"):("rgba(142, 23, 33,0.95)")), 
+              color:
+                (darkMode ? ('#ffffff'):('#ffffff')), 
+              height:'100%',
+              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              borderRadius: '4px',
+              paddingX:'0.5rem'
+              }}>
+                Albums
+              </Box>
           </Typography>
         </TransitionEffect>
         {error && (

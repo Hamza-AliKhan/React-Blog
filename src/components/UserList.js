@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Box,
   Grid,
   Paper,
   Skeleton,
@@ -19,7 +20,7 @@ import { fetchUserList } from "../actions/usersActions.js";
 import AlertSnackBar from "./AlertSnackBar.js";
 import { setOpenError } from "../slices/usersSlice.js";
 
-export default function UserList() {
+export default function UserList({darkMode}) {
   const userList = useSelector((state) => state.app.users.userList);
   const loading = useSelector((state) => state.app.users.loading);
   const openError = useSelector((state) => state.app.users.openError);
@@ -68,7 +69,18 @@ export default function UserList() {
             paddingTop: "2rem",
           }}
         >
-          Users
+          <Box sx={{
+              background:
+                (darkMode?("rgba(45,45,45,1)"):("rgba(142, 23, 33,0.95)")), 
+              color:
+                (darkMode ? ('#ffffff'):('#ffffff')), 
+              height:'100%',
+              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+              borderRadius: '4px',
+              paddingX:'0.5rem'
+              }}>
+                Users
+              </Box>
         </Typography>
         {error && (
           <AlertSnackBar
