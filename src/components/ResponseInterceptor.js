@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-const ResponseInterceptor = axios.create({
-    //baseURL: 'http://localhost:5000/api', // our API base URL for custom server
-    baseURL: 'https://jsonplaceholder.typicode.com/', // our API base URL for JSONPlaceHolder
+// our API base URL for custom server
+//const customBaseURL = 'http://localhost:5000/api';
+
+// our API base URL for JSONPlaceHolder
+const customBaseURL ='https://jsonplaceholder.typicode.com/';
+
+const ResponseInterceptor = axios.create({ 
+    baseURL: customBaseURL, 
   });
 
   export const getPosts = () => {
@@ -19,9 +24,14 @@ const ResponseInterceptor = axios.create({
   
   export const viewComments = (postId,postListCheck) => {
      if(postListCheck===true){
-      //console.log('postListCheck',postListCheck);
+      //For Custom Server Api
+      if(customBaseURL === 'http://localhost:5000/api'){
        return (ResponseInterceptor.get(`/comments/?postId=${postId}?_orderby=DESC?_columnby=id`));
-
+      } 
+      //For JsonPlaceHolder Server Api
+       if(customBaseURL === 'https://jsonplaceholder.typicode.com/'){
+       return (ResponseInterceptor.get(`/comments/?postId=${postId}`));
+      }
      }
     else{
       //console.log('no postListCheck',postListCheck);
