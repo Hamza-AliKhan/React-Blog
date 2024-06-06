@@ -83,6 +83,7 @@ const PostView = ({ postId, onBack }) => {
       console.log("Posted comments on Server:", response);
       //when not using fake API JSON Placeholder because doesn't support POST for comments 
       //setComments(prevState => [commentData, ...prevState]);
+
       setUpdatedComments((prevState) => [commentData, ...prevState]);
       //console.log('Posted comment in commentData:', commentData);
       console.log("Posted comment in UpdatedComments:", updatedComments);
