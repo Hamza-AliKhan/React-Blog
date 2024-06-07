@@ -16,6 +16,7 @@ phases:
   pre_build:
     commands:
       - echo Running pre-build phase...
+      - npm ci
   build:
     commands:
       - echo Building the project...
