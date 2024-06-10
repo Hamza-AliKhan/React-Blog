@@ -1,5 +1,5 @@
 ## A React Blog App 
-with JSON-PlaceHolder as back-end server API Using Material-UI and with Redux-Toolkit.
+* Using JSON-PlaceHolder (REST API) with Material-UI and Redux Store (Redux-Toolkit).
 
 * [React-Blog Demo](https://staging.d168qfoq97tz5h.amplifyapp.com/)
 
