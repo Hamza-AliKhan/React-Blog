@@ -59,6 +59,7 @@ export default function UserList({darkMode}) {
       sx={{ paddingBottom: "2rem", paddingLeft: "2rem" }}
     >
       <Grid item xs={12}>
+      <TransitionEffect threshold={10} timeout={2000} method="zoom">
         <Typography
           variant="h4"
           gutterBottom
@@ -82,6 +83,7 @@ export default function UserList({darkMode}) {
                 Users
               </Box>
         </Typography>
+        </TransitionEffect>
         {error && (
           <AlertSnackBar
             error={error}
@@ -134,7 +136,7 @@ export default function UserList({darkMode}) {
                   .map((user) => (
                     <TransitionEffect
                       key={user.id}
-                      threshold={200}
+                      threshold={20}
                       timeout={2500}
                       method="slide"
                     >
