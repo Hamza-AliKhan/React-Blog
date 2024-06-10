@@ -7,7 +7,7 @@
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.15.19",
-    "@mui/material": "^5.15.19",
+    "@mui/material": "^5.15.11",
     "@reduxjs/toolkit": "^2.2.1",
     "axios": "^1.7.2",
     "react": "^18.3.1",
@@ -15,7 +15,7 @@
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.1",
+    "react-scripts-2": "0.0.5",
     "redux-thunk": "^3.1.0"
   },
   "scripts": {
@@ -23,12 +23,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
