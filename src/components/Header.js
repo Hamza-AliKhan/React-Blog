@@ -33,6 +33,7 @@ export default function Header({ darkMode, onDarkModeToggle }) {
   const dispatch = useDispatch();
   
   function handleBackgroundChange (value) {
+    dispatch(setOpenDrawer(false));
     dispatch(setLoading(true));
     dispatch(setTransition(false));
     (setTimeout(() => {
