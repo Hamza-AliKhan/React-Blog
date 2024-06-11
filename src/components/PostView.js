@@ -23,6 +23,11 @@ import {fetchPostView} from "../actions/postActions.js";
 
 const PostView = ({ postId, onBack }) => {
   const post = useSelector((state) => state.app.postList.postView.currentPost); 
+  //when not using fake API JSON Placeholder comments is directly used instead of the updated comments
+  //const comments = useSelector(state => state.app.postView.comments);
+  //updated comments is used for local manupulation and display only
+  //because doesn't support POST for comments
+  //without any changes it will work but not as intended when new comments at the same time is more than 10 
   const [updatedComments, setUpdatedComments] = useState([]);
   const loading = useSelector((state) => state.app.postList.postView.loading);
   const openAlert = useSelector((state) => state.app.postList.postView.openAlert);
@@ -77,7 +82,11 @@ const PostView = ({ postId, onBack }) => {
     try {
       const response = await postComments(postId, commentData);
       console.log("Posted comments on Server:", response);
+      //when not using fake API JSON Placeholder because doesn't support POST for comments 
+      //setComments(prevState => [commentData, ...prevState]);
+
       setUpdatedComments((prevState) => [commentData, ...prevState]);
+      //console.log('Posted comment in commentData:', commentData);
       console.log("Posted comment in UpdatedComments:", updatedComments);
       dispatch(setOpenAlert(true));
     } catch (error) {
