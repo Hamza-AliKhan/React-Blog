@@ -1,7 +1,7 @@
 ## A React Blog App 
 * Using JSON-PlaceHolder (REST API) with Material-UI and Redux Store (Redux-Toolkit).
 
-* [React-Blog Demo](https://staging.d168qfoq97tz5h.amplifyapp.com/)
+* [React-Blog Demo](https://main.d1jmo9h845x62l.amplifyapp.com)
 
 # Prerequisites
 * [Node.Js](https://nodejs.org/en/download/current)
