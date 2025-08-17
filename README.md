@@ -2,7 +2,7 @@
 * Using JSON-PlaceHolder (REST API) with Material-UI and Redux Store (Redux-Toolkit).
 
 ## Live Demo
-<p>You can view a live demo by clicking <a href="https://main.d1jmo9h845x62l.amplifyapp.com">HERE</a></p>
+<p>You can view a live demo by clicking <a href="https://main.d2mhdehmhh1ryl.amplifyapp.com">HERE</a></p>
 
 ## Built with
 
